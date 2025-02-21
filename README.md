@@ -76,40 +76,161 @@ The system will handle:
 #### i. Use Case Scenarios
 
 1. **Apply to University**
-   - **Actors:** Applicant, Admissions Office
-   - **Description:** As a prospective student, I want to submit an application online so that I can be considered for admission.
+   - **Actors:** Student, Administration  
+   - **Description:** As a prospective student, I want to submit an application online so that I can be considered for admission.  
+   - **Trigger:** The student decides to apply to a university.  
+   - **Preconditions:**  
+      - The university’s application portal must be operational.  
+      - The student must have access to required documents (transcripts, essays, etc.).  
+   - **Steps:**  
+      1. The student accesses the university’s admissions portal.  
+      2. The student creates an account or logs into an existing account.  
+      3. The student fills out the application form.  
+      4. The student uploads required documents.  
+      5. The student pays the application fee (if applicable).  
+      6. The student submits the application.  
+      7. The administration reviews the application and provides an acknowledgment.  
+   - **Postconditions:**  
+      - The application is stored in the admissions system.  
+      - The student receives a confirmation email or notification.  
+   - **Assumptions:**  
+      - The payment system for application fees is functioning properly.  
+
+---
 
 2. **Schedule Classes**
-   - **Actors:** Student, Registrar System
-   - **Description:** As a student, I want to schedule classes so that I can complete my degree requirements.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to schedule classes so that I can complete my degree requirements.  
+   - **Trigger:** The course registration period begins, or the student needs to modify their schedule.  
+   - **Preconditions:**  
+      - The student must be an active, enrolled student.  
+      - The registration system must be available.  
+   - **Steps:**  
+      1. The student logs into the registration system.  
+      2. The student searches for available courses.  
+      3. The student selects desired courses.  
+      4. The system checks for prerequisites and time conflicts.  
+      5. The student confirms their schedule and submits the registration.  
+      6. The system updates the student’s schedule and generates a confirmation.  
+   - **Postconditions:**  
+      - The student’s course schedule is updated in the system.  
+      - The student receives a confirmation of their registered classes.  
+   - **Assumptions:**  
+      - Course seats are available.  
+
+---
 
 3. **Withdraw from a Class**
-   - **Actors:** Student, Academic Advisor
-   - **Description:** As a student, I want to withdraw from a class so that I can adjust my academic plan.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to withdraw from a class so that I can adjust my academic plan.  
+   - **Trigger:** The student decides they no longer want to continue a class.  
+   - **Preconditions:**  
+      - The withdrawal period must be open.  
+   - **Steps:**  
+      1. The student logs into the academic portal.  
+      2. The student navigates to their class schedule.  
+      3. The student selects the class they want to withdraw from.  
+      4. If required, the system notifies administration for approval.  
+      5. The administration reviews the request and provides guidance.  
+      6. Upon approval, the system processes the withdrawal and updates the student’s record.  
+   - **Postconditions:**  
+      - The class is removed from the student’s active schedule.  
+      - The student’s transcript reflects a withdrawal (if applicable).  
+   - **Assumptions:**  
+      - The student understands the financial and academic consequences of withdrawing.  
+
+---
 
 4. **Submit Final Grades**
-   - **Actors:** Faculty, Registrar
-   - **Description:** As a faculty member, I want to submit final grades so that student records are updated.
+   - **Actors:** Faculty, Administration  
+   - **Description:** As a professor, I want to submit final grades so that student records are updated.  
+   - **Trigger:** The end of the academic term is reached.  
+   - **Preconditions:**  
+      - The professor must have access to the grading system.  
+   - **Steps:**  
+      1. The professor logs into the grading system.  
+      2. The professor selects the course they are teaching.  
+      3. The professor enters final grades for each student.  
+      4. The professor reviews and confirms the submitted grades.  
+      5. The system updates student records and notifies administration.  
+   - **Postconditions:**  
+      - The students’ transcripts are updated with final grades.  
+      - Administration has access to the submitted grades for official records.  
+
+---
 
 5. **Change Major**
-   - **Actors:** Student, Academic Advisor
-   - **Description:** As a student, I want to submit a major change request so that I can switch academic programs.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to submit a major change request so that I can switch academic programs.  
+   - **Trigger:** The student decides to change their major.  
+   - **Steps:**  
+      1. The student schedules a meeting with an advisor.  
+      2. The advisor reviews the student’s request and provides guidance.  
+      3. The student submits a major change request form.  
+      4. Administration approves the request.  
+      5. The system updates the student’s academic record.  
+      6. The student receives confirmation of the major change.  
+
+---
 
 6. **View Transcript**
-   - **Actors:** Student, Registrar
-   - **Description:** As a student, I want to view my transcript so that I can track my academic progress.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to view my transcript so that I can track my academic progress.  
+   - **Trigger:** The student wants to check their academic history.  
+   - **Steps:**  
+      1. The student logs into the student portal.  
+      2. The student navigates to the transcript section.  
+      3. The system retrieves and displays the student's academic record.  
+      4. The student can view, download, or request an official transcript.  
+
+---
 
 7. **Apply for Graduation**
-   - **Actors:** Student, Registrar
-   - **Description:** As a student, I want to apply for graduation so that I can receive my degree.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to apply for graduation so that I can receive my degree.  
+   - **Trigger:** The student reaches the final semester of their program.  
+   - **Preconditions:**  
+      - The student must have completed (or be on track to complete) all graduation requirements.  
+   - **Steps:**  
+      1. The student logs into the academic portal.  
+      2. The student verifies that they have met all graduation requirements.  
+      3. The student fills out and submits the graduation application.  
+      4. Administration reviews the application.  
+      5. The student receives confirmation of application approval or notification of missing requirements.  
+      6. If approved, the student receives further instructions on commencement and diploma issuance.  
+   - **Postconditions:**  
+      - The student’s graduation status is recorded.  
+
+---
 
 8. **Check Graduation Requirements**
-   - **Actors:** Student, Registrar
-   - **Description:** As a student, I want to check my graduation requirements so that I know what courses I still need to complete.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to check my graduation requirements so that I know what courses I still need to complete.  
+   - **Trigger:** The student wants to verify their progress toward graduation.  
+   - **Steps:**  
+      1. The student logs into the academic portal.  
+      2. The student navigates to the degree audit section.  
+      3. The system displays completed and remaining graduation requirements.  
+      4. The student reviews the information and consults an advisor if needed.  
+
+---
 
 9. **Submit FAFSA**
-   - **Actors:** Student, Financial Aid Office
-   - **Description:** As a student, I want to submit my FAFSA so that I can receive financial aid.
+   - **Actors:** Student, Administration  
+   - **Description:** As a student, I want to submit my FAFSA so that I can receive financial aid.  
+   - **Trigger:** The FAFSA application period begins or the student needs financial aid.  
+   - **Preconditions:**  
+      - The student must have a valid Social Security Number (or eligible non-citizen status).  
+   - **Steps:**  
+      1. The student accesses the FAFSA website.  
+      2. The student logs in or creates an account.  
+      3. The student fills out the FAFSA form, including financial and personal information.  
+      4. The student submits required documentation (e.g., tax returns, income verification).  
+      5. The system processes the application and generates a confirmation.  
+      6. Administration receives and reviews the application.  
+      7. The student is notified of their financial aid award status.  
+   - **Postconditions:**  
+      - The FAFSA application is submitted and processed.  
 
 #### ii. Use Case Diagram
 (Insert Use Case Diagram here)
