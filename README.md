@@ -69,7 +69,8 @@ The system will handle:
 ![DFD_CPS310](https://github.com/user-attachments/assets/713c75c5-f604-44f4-9060-2f6f7ddcb620)
 
 ### b. Context-Level Entity Relationship Diagram
-(Insert ERD here)
+![ER Diagram](https://github.com/user-attachments/assets/4df6d544-9ac9-470c-ac56-53f2c52352be)
+
 
 ### c. Use Cases
 
