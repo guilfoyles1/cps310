@@ -234,7 +234,7 @@ The system will handle:
       - The FAFSA application is submitted and processed.  
 
 #### ii. Use Case Diagram
-(Insert Use Case Diagram here)
+![Use Case Diagram](https://github.com/guilfoyles1/cps310/blob/main/UseCaseDiagram.png)
 
 ---
 
