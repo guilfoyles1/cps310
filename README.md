@@ -66,10 +66,10 @@ The system will handle:
 ## 3. Systems Analysis
 
 ### a. Context-Level Data Flow Diagram
-![DFD_CPS310](https://github.com/guilfoyles1/cps310/blob/main/ContextLevelDFD.png)
+![DFD_CPS310](ContextLevelDFD.png)
 
 ### b. Context-Level Entity Relationship Diagram
-![ER Diagram](https://github.com/guilfoyles1/cps310/blob/main/ERD.png)
+![ER Diagram](ERD.png)
 
 
 ### c. Use Cases
@@ -234,7 +234,7 @@ The system will handle:
       - The FAFSA application is submitted and processed.  
 
 #### ii. Use Case Diagram
-![Use Case Diagram](https://github.com/guilfoyles1/cps310/blob/main/UseCaseDiagram.png)
+![Use Case Diagram](UseCaseDiagram.png)
 
 ---
 
