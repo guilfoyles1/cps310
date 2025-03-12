@@ -247,7 +247,7 @@ This document lays out the initial system proposal, covering its key functions, 
 
 ---
 
-## 1. Build off of context-level data flow diagram
+## 1. Build Off of Context-Level Data Flow Diagram
 - Create **Diagram 0**.
 - Create at least **1 process** that can be further decomposed into a child diagram.
 
