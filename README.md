@@ -241,3 +241,58 @@ The system will handle:
 ## 4. Conclusion
 This document lays out the initial system proposal, covering its key functions, interactions, and data relationships. Future phases will refine these details and develop a more comprehensive system design.
 
+---
+
+# Phase 2: Data Flow Diagrams, Data Dictionary, Process Specification
+
+---
+
+## 1. Build off of context-level data flow diagram
+- Create **Diagram 0**.
+- Create at least **1 process** that can be further decomposed into a child diagram.
+
+## 2. Data Dictionary
+### Data Flow Descriptions
+For each flow in your set of data flow diagrams, create the following data flow descriptions:
+- **Uniquely Descriptive Name**
+- **Description** of the data flow
+- **Source** of the flow
+- **Destination** of the flow
+- **Name of Associated Data Structure**
+- Any **Needed Comments**
+
+### Data Store Descriptions
+For each data store in your set of data flow diagrams, create the following descriptions:
+- **Data Store ID**
+- **Name**
+- **Alias**
+- **Description**
+- **Name of Associated Data Structure**
+
+### Data Element Descriptions
+For each data element, create the following descriptions:
+- **Name** of the element
+- Any **Aliases**
+- A short **Description**
+- Whether the element is **Base** or **Derived**
+- The **Type of Data** it contains
+- **Validation Criteria**
+- Default value if appropriate
+- Any **Needed Comments**
+
+## 3. Process Specification
+For each process identified in your set of data flow diagrams, create the following process specification:
+- **Number**
+- **Name**
+- **Description**
+- **Input Data Flows**
+- **Output Data Flows**
+- Reference to the associated **Structured Decision**
+- Any **Comments or Unresolved Issues**
+
+## 4. Structured Decision Techniques
+Include at least one of each technique for structured decision:
+- **Structured English**
+- **Decision Table**
+- **Decision Tree**
+
