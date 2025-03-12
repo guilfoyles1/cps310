@@ -247,9 +247,19 @@ This document lays out the initial system proposal, covering its key functions, 
 
 ---
 
-## 1. Build Off of Context-Level Data Flow Diagram
-- Create **Diagram 0**.
-- Create at least **1 process** that can be further decomposed into a child diagram.
+## 1. Data Flow Diagrams  
+### a. Diagram 0 (System-Level Decomposition)  
+![Diagram 0](Diagram0.png)
+
+### b. Child Diagram 1 (Process 1: Handle Student Requests)  
+![Child Diagram 1](ChildDiagram1.png)
+
+### c. Child Diagram 2 (Process 2: Manage Course Enrollment) 
+![Child Diagram 2](ChildDiagram2.png)
+
+### d. Child Diagram 3 (Process 4: Execute Administrative Changes)  
+![Child Diagram 3](ChildDiagram3.png)
+
 
 ## 2. Data Dictionary
 ### Data Flow Descriptions
