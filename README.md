@@ -268,6 +268,70 @@ For each flow in your set of data flow diagrams, create the following data flow 
 - **Name of Associated Data Structure**
 - Any **Needed Comments**
 
+### Data Structures
+
+**1. CourseRegistrationRequest**  
+CourseRegistrationRequest = 
+         StudentID + 
+         CourseID + 
+         Term + 
+         RequestType + 
+         Timestamp
+
+- **StudentID** = Unique identifier for the student  
+- **CourseID** = Unique identifier for the course  
+- **Term** = Semester and year (e.g., Fall 2025)  
+- **RequestType** = [Add; Drop; Withdraw]  
+- **Timestamp** = Date and time of the request
+
+**2. StudentRecord**  
+StudentRecord = StudentID + StudentName + Major + {EnrolledCourses} + Transcript
+
+- **StudentName** = First Name + (Middle Initial) + Last Name  
+- **EnrolledCourses** = {CourseID + Section + Term + Status}  
+- **Transcript** = {CourseID + Term + Grade}
+
+**3. GradeSubmission**  
+GradeSubmission = CourseID + FacultyID + {StudentGrade}
+
+- **StudentGrade** = StudentID + Grade + SubmissionTimestamp  
+- **Grade** = [A; B; C; D; F; NC; W]
+
+**4. WaitlistEntry**  
+WaitlistEntry = CourseID + StudentID + WaitlistTimestamp + PriorityLevel
+
+- **PriorityLevel** = [1; 2; 3...] depending on order of request
+
+**5. CourseData**  
+CourseData = CourseID + Title + Credits + Prerequisites + Capacity + {EnrollmentInfo} + Waitlist
+
+- **Prerequisites** = {CourseID}  
+- **EnrollmentInfo** = {StudentID + Status}  
+- **Waitlist** = {WaitlistEntry}
+
+**6. TranscriptRecord**  
+TranscriptRecord = StudentID + {CourseID + Term + Grade} + GPA + TranscriptRequestTimestamp
+
+- **GPA** = Cumulative grade point average for the student  
+- **TranscriptRequestTimestamp** = Time the transcript was requested
+
+**7. EnrollmentRecord**  
+EnrollmentRecord = StudentID + CourseID + Term + Status + EnrollmentDate + (WithdrawalDate)
+
+- **Status** = [Enrolled; Withdrawn; Waitlisted]  
+- **EnrollmentDate** = Date the student was enrolled  
+- **WithdrawalDate** = If applicable, when the student withdrew
+
+**Algebraic Notation Key:**
+
+- `=` means "is composed of"  
+- `+` means "and"  
+- `{}` means repeating elements  
+- `[]` means mutually exclusive options  
+- `()` means optional element
+
+---
+
 ### Data Store Descriptions
 For each data store in your set of data flow diagrams, create the following descriptions:
 - **Data Store ID**
@@ -275,6 +339,8 @@ For each data store in your set of data flow diagrams, create the following desc
 - **Alias**
 - **Description**
 - **Name of Associated Data Structure**
+
+---
 
 ### Data Element Descriptions
 For each data element, create the following descriptions:
