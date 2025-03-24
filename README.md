@@ -506,15 +506,51 @@ EnrollmentRecord = StudentID + CourseID + Term + Status + EnrollmentDate + (With
 ---
 
 ### Data Element Descriptions
-For each data element, create the following descriptions:
-- **Name** of the element
-- Any **Aliases**
-- A short **Description**
-- Whether the element is **Base** or **Derived**
-- The **Type of Data** it contains
-- **Validation Criteria**
-- Default value if appropriate
-- Any **Needed Comments**
+
+- **StudentID**
+  - **Aliases**: SID
+  - **Description**: A unique identifier assigned to each student in the system.
+  - **Base or Derived**: Base
+  - **Type of Data**: Integer
+  - **Validation Criteria**: Must be a valid 9-digit integer.
+  - **Default Value**: N/A
+  - **Comments**: Uniquely identifies a student in the system.
+
+- **CourseID**
+  - **Aliases**: CRN
+  - **Description**: A unique identifier for each course offered.
+  - **Base or Derived**: Base
+  - **Type of Data**: Integer
+  - **Validation Criteria**: Must be a valid course identifier in the system.
+  - **Default Value**: N/A
+  - **Comments**: Refers to a specific course being requested by the student.
+
+- **Term**
+  - **Aliases**: Semester, Academic Term
+  - **Description**: Represents the semester and year in which the course is offered (e.g.,    Fall 2025).
+  - **Base or Derived**: Base
+  - **Type of Data**: String
+  - **Validation Criteria**: Format must be "Season Year" (e.g., "Fall 2025").
+  - **Default Value**: N/A
+  - **Comments**: Used to categorize courses based on academic term.
+
+- **RequestType**
+  - **Aliases**: Enrollment Action
+  - **Description**: Specifies the type of request being made (Add, Drop, or Withdraw).
+  - **Base or Derived**: Base
+  - **Type of Data**: String
+  - **Validation Criteria**: Must be one of the following values: "Add", "Drop", "Withdraw".
+  - **Default Value**: N/A
+  - **Comments**: Defines the nature of the course registration action.
+
+- **Timestamp**
+  - **Aliases**: Request Time
+  - **Description**: The date and time when the course registration request was made.
+  - **Base or Derived**: Base
+  - **Type of Data**: DateTime
+  - **Validation Criteria**: Must be a valid DateTime format.
+  - **Default Value**: N/A
+  - **Comments**: Used to track when the request was initiated.
 
 ---
 
