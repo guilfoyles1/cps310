@@ -379,63 +379,49 @@ This document lays out the initial system proposal, covering its key functions, 
 - **Source**: Process Registration Request process
 - **Destination**: Validate Prerequisites process
 - **DS**: EnrollmentRecord
-- **Comments**:
 
 ### Withdraw Request
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: If the student is requesting to withdraw from a course, this flow will start processing the withdrawal request immediately.
+- **Source**: Process Registration Request process
+- **Destination**: Process Withdrawal Request process
+- **DS**: EnrollmentRecord
 
 ### Prereqs Met
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: If the prerequisites are met, this flow moves to the next step to verify seat availability.
+- **Source**: Validate Prerequisites process
+- **Destination**: Verify Seat Availability process
+- **DS**: CourseRegistrationRequest, CourseData
 
 ### Prereqs Not Met
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: If the prerequisites are not met, this flow moves to the next step to reject the enrollment request.
+- **Source**: Validate Prerequisites process
+- **Destination**: Reject Enrollment Request process
+- **DS**: CourseData, StudentRecord
 
 ### Seats Available
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: If there are seats available, the student will be enrolled into the course.
+- **Source**: Verify Seat Availability process
+- **Destination**: Enroll Student process
+- **DS**: CourseData, EnrollmentRecord
 
 ### Class Full
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: If the class is full, the student will get added to the waitlist.
+- **Source**: Verify Seat Availability process
+- **Destination**: Add to Waitlist process
+- **DS**: CourseData, WaitlistEntry
 
 ### Update
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: Transfers the new enrollment/withdrawal data to update the data stores.
+- **Source**: Enroll Student/Process Withdrawal Request/Course Data store
+- **Destination**: Course Data store & Student Records data store
+- **DS**: CourseData, EnrollmentRecord, StudentRecord
 
 ### Add to Waitlist
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
+- **Description**: Will add the student to the waitlist and update the course data to display that information.
+- **Source**: Add to Waitlist process
+- **Destination**: Course Data store
+- **DS**: WaitlistEntry, CourseData
 
-### Update
-- **Description**: 
-- **Source**: 
-- **Destination**: 
-- **DS**:
-- **Comments**:
 
 ---
 
@@ -510,14 +496,12 @@ EnrollmentRecord = StudentID + CourseID + Term + Status + EnrollmentDate + (With
 - **Name**: Student Record
 - **Description**: Houses all of the Student’s information. Includes: Student ID, name, Major info, Transcript, Course list, and more.
 - **DS**: StudentRecord
-- **Comments**:
 
 ### Course Data
 - **ID**: D2
 - **Name**: Course Data
 - **Description**: Holds information for each course offered. Includes: Class size, prerequisites, credits, enrollment info, and more.
 - **DS**: CourseData
-- **Comments**:
 
 ---
 
