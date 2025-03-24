@@ -257,9 +257,6 @@ This document lays out the initial system proposal, covering its key functions, 
 ### c. Child Diagram 2 (Process 2: Manage Course Enrollment) 
 ![Child Diagram 2](ChildDiagram2.png)
 
-### d. Child Diagram 3 (Process 4: Execute Administrative Changes)  
-![Child Diagram 3](ChildDiagram3.png)
-
 
 ## 2. Data Dictionary
 ### Data Flow Descriptions
