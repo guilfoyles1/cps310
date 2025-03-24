@@ -259,14 +259,185 @@ This document lays out the initial system proposal, covering its key functions, 
 
 
 ## 2. Data Dictionary
+
 ### Data Flow Descriptions
-For each flow in your set of data flow diagrams, create the following data flow descriptions:
-- **Uniquely Descriptive Name**
-- **Description** of the data flow
-- **Source** of the flow
-- **Destination** of the flow
-- **Name of Associated Data Structure**
-- Any **Needed Comments**
+
+### Submit Requests (Admission, Major, Transcript)
+- **Description**: This action is triggered by the student and allows them to request multiple actions. The actions that can be requested are: Applying for University, major change, and viewing a transcript.
+- **Source**: Student Entity
+- **Destination**: Handle Student Requests Process
+- **DS**: StudentRecord, Transcript Record
+- **Comments**:
+
+### Course Registration
+- **Description**: This flow handles a student requesting to either add or drop a course.
+- **Source**: Student Entity
+- **Destination**: Manage Course Enrollment Process
+- **DS**: CourseRegistrationRequest
+- **Comments**:
+
+### Request for Review
+- **Description**: Grabs the student’s request and sends them to Admin for review.
+- **Source**: Handle Student Requests Process
+- **Destination**: Admin Entity
+- **DS**: StudentRecord
+- **Comments**:
+
+### Approve/Deny
+- **Description**: Grabs the decision to approve or deny the request from admin and hands it to the process to get the requests handled.
+- **Source**: Admin Entity
+- **Destination**: Handle Student Requests Process
+- **DS**: CourseRegistrationRequest
+- **Comments**:
+
+### Update Student Info
+- **Description**: This flow updates the students’ data in the student records data store.
+- **Source**: Admin entity/ Student Records data store
+- **Destination**: Admin entity/ Student Records data store
+- **DS**: StudentRecord
+- **Comments**:
+
+### Approval to Enroll/Withdraw
+- **Description**: This data flow allows administrators to approve a student to enroll or withdraw from a course.
+- **Source**: Admin entity
+- **Destination**: Manage Course Enrollment process
+- **DS**: WaitlistEntry, CourseData, CourseRegistrationRequest
+- **Comments**:
+
+### Modify Enrollment
+- **Description**: This flow updates the Course Data store after Administration approves a course change, or a student’s request to add/drop a course.
+- **Source**: Manage Course Enrollment process
+- **Destination**: Course Data store
+- **DS**: CourseData
+- **Comments**:
+
+### Update Student Info
+- **Description**: The new Course Data gets entered into the student records.
+- **Source**: Course Data store
+- **Destination**: Student Records data store
+- **DS**: StudentRecord
+- **Comments**:
+
+### Submit Grades
+- **Description**: The action of faculty submitting their final grades to get processed.
+- **Source**: Faculty entity
+- **Destination**: Process Grades process
+- **DS**: GradeSubmission
+- **Comments**:
+
+### Store Grades
+- **Description**: Takes the grades that the faculty have submitted and stores them into the student records.
+- **Source**: Process Grades process
+- **Destination**: Student Records data store
+- **DS**: GradeSubmission
+- **Comments**:
+
+### Admission Request
+- **Description**: Takes the student’s request and transfers it to get approved.
+- **Source**: Identify Request Type process
+- **Destination**: Process Admission Request process
+- **DS**: StudentRecord
+- **Comments**:
+
+### Major Change Request
+- **Description**: Takes the student’s request to change major and transfers it to the next process to get it approved.
+- **Source**: Identify Request Type process
+- **Destination**: Process Major Change Request process
+- **DS**: StudentRecord
+- **Comments**:
+
+### Transcript Request
+- **Description**: Takes the student’s request to obtain transcript and transfers it to the next process to get it approved.
+- **Source**: Identify Request Type process
+- **Destination**: Process Transcript Request
+- **DS**: TranscriptRecord (TranscriptRequestTimestamp)
+- **Comments**:
+
+### Update Record
+- **Description**: Makes physical changes to show acceptance in the student records.
+- **Source**: Process Admission Request process
+- **Destination**: Student Records data store
+- **DS**: StudentRecord
+- **Comments**:
+
+### Update Major Info
+- **Description**: Updates the major of the student in the student records.
+- **Source**: Process Major Change Request process
+- **Destination**: Student Records data store
+- **DS**: StudentRecord
+- **Comments**:
+
+### Retrieve Transcripts
+- **Description**: Retrieves the students’ transcript from the Students’ records.
+- **Source**: Process Transcript Request process
+- **Destination**: Student Records data store
+- **DS**: TranscriptRecord
+- **Comments**:
+
+### Enrollment Request
+- **Description**: Starts the Enrollment process by letting the prerequisite validation process know which course is being requested.
+- **Source**: Process Registration Request process
+- **Destination**: Validate Prerequisites process
+- **DS**: EnrollmentRecord
+- **Comments**:
+
+### Withdraw Request
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Prereqs Met
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Prereqs Not Met
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Seats Available
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Class Full
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Update
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Add to Waitlist
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+### Update
+- **Description**: 
+- **Source**: 
+- **Destination**: 
+- **DS**:
+- **Comments**:
+
+---
 
 ### Data Structures
 
@@ -332,13 +503,21 @@ EnrollmentRecord = StudentID + CourseID + Term + Status + EnrollmentDate + (With
 
 ---
 
-### Data Store Descriptions
-For each data store in your set of data flow diagrams, create the following descriptions:
-- **Data Store ID**
-- **Name**
-- **Alias**
-- **Description**
-- **Name of Associated Data Structure**
+## Data Store Descriptions
+
+### Student Records
+- **ID**: D1
+- **Name**: Student Record
+- **Description**: Houses all of the Student’s information. Includes: Student ID, name, Major info, Transcript, Course list, and more.
+- **DS**: StudentRecord
+- **Comments**:
+
+### Course Data
+- **ID**: D2
+- **Name**: Course Data
+- **Description**: Holds information for each course offered. Includes: Class size, prerequisites, credits, enrollment info, and more.
+- **DS**: CourseData
+- **Comments**:
 
 ---
 
