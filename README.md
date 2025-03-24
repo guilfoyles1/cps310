@@ -619,8 +619,51 @@ For each data element, create the following descriptions:
 ---
 
 ## 4. Structured Decision Techniques
-Include at least one of each technique for structured decision:
-- **Structured English**
-- **Decision Table**
-- **Decision Tree**
+
+To support the decision-making logic within the system, the following structured techniques have been applied:
+
+### 4.1 Structured English – For Admin Approval Logic (Process 1)
+```text
+IF Request.Type = "Transcript"
+  THEN Auto-Approve
+ELSE IF Request.Type = "Major Change" OR Request.Type = "Admission"
+  THEN Send to Admin for Manual Review
+ENDIF
+```
+**Used in**: 1. Handle Student Requests
+
+---
+
+### 4.2 Decision Table – For 2.2 and 2.3 Combined Logic (Validate Prerequisites & Verify Seat Availability)
+| Prerequisites Met | Seats Available | Action            |
+|-------------------|------------------|-------------------|
+| Yes               | Yes              | Enroll Student    |
+| Yes               | No               | Add to Waitlist   |
+| No                | --               | Reject Request    |
+
+**Used in**: 2.2 Validate Prerequisites, 2.3 Verify Seat Availability
+
+---
+
+### 4.3 Decision Tree – Enrollment Outcomes
+```text
+                ┌───────────────┐
+                │Prereqs Met?   │
+                └──────┬────────┘
+                       │ Yes
+               ┌───────▼────────┐
+               │Seats Available?│
+               └───────┬────────┘
+            Yes        │        No
+            ▼          ▼         ▼
+        Enroll      Waitlist   Reject
+```
+
+**Used in**: 2.2 / 2.3 – To visually support conditional outcomes from prerequisite and seat availability checks.
+
+---
+
+> These three techniques demonstrate different formats used for decision logic in system processes. Additional processes without complex branching did not require structured decisions.
+
+
 
