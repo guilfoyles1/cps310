@@ -532,15 +532,91 @@ For each data element, create the following descriptions:
 - Default value if appropriate
 - Any **Needed Comments**
 
-## 3. Process Specification
-For each process identified in your set of data flow diagrams, create the following process specification:
-- **Number**
-- **Name**
-- **Description**
-- **Input Data Flows**
-- **Output Data Flows**
-- Reference to the associated **Structured Decision**
-- Any **Comments or Unresolved Issues**
+---
+
+## 3. Process Specifications
+
+### 1. Handle Student Requests
+- **Description**: Manages student-initiated actions such as admission applications, major changes, and transcript requests.
+- **Input Flows**: Submit Requests (Admission, Major, Transcript)
+- **Output Flows**: Request for Review (to Admin), Approval/Deny (from Admin), Update Student Info
+- **Structured Decision**: Uses Structured English for admin approval logic (see below)
+- **Comments**: May require access to student data and request types
+
+### 1.1 Identify Request Type
+- **Description**: Determines whether the student request is for admission, major change, or transcript.
+- **Input Flows**: Submit Requests (Admission, Major, Transcript)
+- **Output Flows**: Admission Request, Major Change Request, Transcript Request
+- **Comments**: This process directs the request to the correct handling sub-process.
+
+### 1.2 Process Admission Request
+- **Description**: Reviews student admission requests and updates records upon approval.
+- **Input Flows**: Admission Request
+- **Output Flows**: Update Record
+- **Comments**: Includes administrative review; approval decision may come from external admin.
+
+### 1.3 Process Major Change Request
+- **Description**: Processes requests from students wishing to change their major.
+- **Input Flows**: Major Change Request
+- **Output Flows**: Update Major Info
+- **Comments**: Requires access to Student Records and Admin approval flow.
+
+### 1.4 Process Transcript Request
+- **Description**: Handles requests for official transcripts and retrieves data from student records.
+- **Input Flows**: Transcript Request
+- **Output Flows**: Retrieve Transcripts
+- **Comments**: May involve formatting and validation of academic data.
+
+### 2. Manage Course Enrollment
+- **Description**: Oversees registration, withdrawal, prerequisite validation, enrollment updates, and waitlisting.
+- **Input Flows**: Course Registration Info, Approval to Enroll/Withdraw
+- **Output Flows**: Modify Enrollment, Update Student Info
+- **Structured Decision**: Refer to Decision Tree for path logic and Decision Table for enrollment vs. waitlist conditions
+- **Comments**: Expanded in Child Diagram 2
+
+### 2.1 Process Registration Request
+- **Description**: Parses incoming registration info and forwards it for validation.
+- **Input Flows**: Course Registration Info, Approval to Enroll/Withdraw
+- **Output Flows**: Enrollment Request
+
+### 2.2 Validate Prerequisites
+- **Description**: Checks if the student meets prerequisites for the requested course.
+- **Input Flows**: Enrollment Request
+- **Output Flows**: Prereqs Met, Prereqs Not Met, Withdrawal Request
+- **Structured Decision**: See Decision Table for validation logic
+
+### 2.3 Verify Seat Availability
+- **Description**: Checks current enrollment and determines if space is available in the course.
+- **Input Flows**: Prereqs Met
+- **Output Flows**: Seats Available, Class Full
+
+### 2.4 Enroll Student
+- **Description**: Updates student records and course data to finalize enrollment.
+- **Input Flows**: Seats Available
+- **Output Flows**: Update Student Records, Update Course Data
+
+### 2.5 Add to Waitlist
+- **Description**: Adds the student to the waitlist if a class is full.
+- **Input Flows**: Class Full
+- **Output Flows**: Add to Waitlist
+
+### 2.6 Reject Enrollment Request
+- **Description**: Rejects the enrollment if prerequisites are not met.
+- **Input Flows**: Prereqs Not Met
+- **Output Flows**: Rejection Notification (not shown in diagram but implied)
+
+### 2.7 Process Withdrawal Request
+- **Description**: Removes student from a course and updates records accordingly.
+- **Input Flows**: Withdrawal Request
+- **Output Flows**: Update Course Data, Update Student Records
+
+### 3. Process Grades
+- **Description**: Accepts grade submissions from faculty and updates student records accordingly.
+- **Input Flows**: Submit Grades
+- **Output Flows**: Store Grades
+- **Comments**: Tied to faculty input and Student Record update
+
+---
 
 ## 4. Structured Decision Techniques
 Include at least one of each technique for structured decision:
