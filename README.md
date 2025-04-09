@@ -685,5 +685,122 @@ ENDIF
 
 > These three techniques demonstrate different formats used for decision logic in system processes. Additional processes without complex branching did not require structured decisions.
 
+---
+
+# Phase 3: UML Diagrams
+
+---
+
+## 1. Activity Diagrams
+
+### 1.1 Apply to University
+![Activity Diagram – Apply to University](images/activity_apply_university.png)
+
+### 1.2 Schedule Classes
+![Activity Diagram – Schedule Classes](images/activity_schedule_classes.png)
+
+### 1.3 Withdraw from a Class
+![Activity Diagram – Withdraw](images/activity_withdraw.png)
+
+### 1.4 Submit Final Grades
+![Activity Diagram – Submit Grades](images/activity_submit_grades.png)
+
+### 1.5 Change Major
+![Activity Diagram – Change Major](images/activity_change_major.png)
+
+### 1.6 View Transcript
+![Activity Diagram – View Transcript](images/activity_view_transcript.png)
+
+### 1.7 Apply for Graduation
+![Activity Diagram – Apply for Graduation](images/activity_apply_graduation.png)
+
+### 1.8 Check Graduation Requirements
+![Activity Diagram – Check Grad Requirements](images/activity_check_grad_reqs.png)
+
+### 1.9 Submit FAFSA
+![Activity Diagram – Submit FAFSA](images/activity_submit_fafsa.png)
+
+---
+
+## 2. Sequence Diagrams
+
+### 2.1 Apply to University
+![Sequence Diagram – Apply](images/sequence_apply_university.png)
+
+### 2.2 Schedule Classes
+![Sequence Diagram – Schedule](images/sequence_schedule_classes.png)
+
+### 2.3 Withdraw from a Class
+![Sequence Diagram – Withdraw](images/sequence_withdraw.png)
+
+### 2.4 Submit Final Grades
+![Sequence Diagram – Submit Grades](images/sequence_submit_grades.png)
+
+### 2.5 Change Major
+![Sequence Diagram – Change Major](images/sequence_change_major.png)
+
+### 2.6 View Transcript
+![Sequence Diagram – View Transcript](images/sequence_view_transcript.png)
+
+### 2.7 Apply for Graduation
+![Sequence Diagram – Apply Graduation](images/sequence_apply_graduation.png)
+
+### 2.8 Check Graduation Requirements
+![Sequence Diagram – Check Grad Requirements](images/sequence_check_grad_reqs.png)
+
+### 2.9 Submit FAFSA
+![Sequence Diagram – FAFSA](images/sequence_submit_fafsa.png)
+
+---
+
+## 3. Class Diagram
+
+![Class Diagram – Full System](images/class_diagram_full.png)
+
+Classes:
+- **Student**: +id, +name, +email, +major, +transcript / +registerCourse(), +withdrawCourse(), +viewTranscript()
+- **Course**: +id, +title, +capacity, +prerequisites / +enrollStudent(), +dropStudent()
+- **Enrollment**: +studentID, +courseID, +status / +updateStatus()
+- **Transcript**: +studentID, +coursesCompleted, +GPA / +generateTranscript()
+- **Application**: +id, +studentID, +status / +submit(), +review()
+- **MajorChangeRequest**: +id, +studentID, +newMajor / +submitRequest(), +approveRequest()
+- **Grade**: +studentID, +courseID, +grade / +submitGrade(), +updateGrade()
+- **Admin**: +id, +name, +role / +approveApplication(), +reviewTranscript()
+- **Faculty**: +id, +name, +department / +submitGrades(), +viewCourses()
+
+Note: Public = `+`, Private = `-`, Protected = `#`
+
+---
+
+## 4. Statechart Diagrams
+
+### Student
+![Statechart – Student](images/statechart_student.png)
+**States:** Idle → Logging In → Requesting Action (Register/Withdraw/View Transcript) → Logout
+
+### Application
+![Statechart – Application](images/statechart_application.png)
+**States:** Draft → Submitted → Under Review → Approved/Rejected
+
+### Enrollment
+![Statechart – Enrollment](images/statechart_enrollment.png)
+**States:** Pending → Enrolled/Waitlisted → Dropped/Withdrawn
+
+### MajorChangeRequest
+![Statechart – Major Change](images/statechart_major_change.png)
+**States:** Created → Submitted → Reviewed → Approved/Denied
+
+### Grade
+![Statechart – Grade](images/statechart_grade.png)
+**States:** Draft → Submitted → Finalized
+
+### Explanation for Classes Not Included:
+- **Admin** and **Faculty** are primarily event-driven and do not have internal state transitions meaningful enough to merit a statechart diagram. Their actions are external (e.g., approving, reviewing) rather than evolving through clear states.
+
+---
+
+
+
+
 
 
