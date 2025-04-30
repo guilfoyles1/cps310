@@ -772,30 +772,13 @@ Note: Public = `+`, Private = `-`, Protected = `#`
 
 ---
 
+
 ## 4. Statechart Diagrams
 
-### Student
-![Statechart – Student](images/statechart_student.png)
-**States:** Idle → Logging In → Requesting Action (Register/Withdraw/View Transcript) → Logout
+Statechart diagrams were not created for this system because the core classes — such as `Student`, `Transcript`, `Application`, and `Admin` — represent static entities or perform straightforward actions. These classes do not undergo complex internal state transitions (typically requiring at least 3–4 states), and their behaviors are already captured effectively through the activity and sequence/communication diagrams.
 
-### Application
-![Statechart – Application](images/statechart_application.png)
-**States:** Draft → Submitted → Under Review → Approved/Rejected
+Therefore, statechart diagrams were deemed unnecessary for this system.
 
-### Enrollment
-![Statechart – Enrollment](images/statechart_enrollment.png)
-**States:** Pending → Enrolled/Waitlisted → Dropped/Withdrawn
-
-### MajorChangeRequest
-![Statechart – Major Change](images/statechart_major_change.png)
-**States:** Created → Submitted → Reviewed → Approved/Denied
-
-### Grade
-![Statechart – Grade](images/statechart_grade.png)
-**States:** Draft → Submitted → Finalized
-
-### Explanation for Classes Not Included:
-- **Admin** and **Faculty** are primarily event-driven and do not have internal state transitions meaningful enough to merit a statechart diagram. Their actions are external (e.g., approving, reviewing) rather than evolving through clear states.
 
 ---
 
