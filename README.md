@@ -724,37 +724,37 @@ ENDIF
 ## 2. Sequence Diagrams
 
 ### 2.1 Apply to University
-![Sequence Diagram – Apply](images/sequence_apply_university.png)
+![Sequence Diagram – Apply](images/Context-Level_DFD-Sequence2.1.drawio.png)
 
 ### 2.2 Schedule Classes
-![Sequence Diagram – Schedule](images/sequence_schedule_classes.png)
+![Sequence Diagram – Schedule](images/Context-Level_DFD-Sequence2.2.drawio.png)
 
 ### 2.3 Withdraw from a Class
-![Sequence Diagram – Withdraw](images/sequence_withdraw.png)
+![Sequence Diagram – Withdraw](images/Context-Level_DFD-Sequence2.3.drawio.png)
 
 ### 2.4 Submit Final Grades
-![Sequence Diagram – Submit Grades](images/sequence_submit_grades.png)
+![Sequence Diagram – Submit Grades](images/Context-Level_DFD-Sequence2.4.drawio.png)
 
 ### 2.5 Change Major
-![Sequence Diagram – Change Major](images/sequence_change_major.png)
+![Sequence Diagram – Change Major](images/Context-Level_DFD-Sequence2.5.drawio.png)
 
 ### 2.6 View Transcript
-![Sequence Diagram – View Transcript](images/sequence_view_transcript.png)
+![Sequence Diagram – View Transcript](images/Context-Level_DFD-Sequence2.6.drawio.png)
 
 ### 2.7 Apply for Graduation
-![Sequence Diagram – Apply Graduation](images/sequence_apply_graduation.png)
+![Sequence Diagram – Apply Graduation](images/Context-Level_DFD-Sequence2.7.drawio.png)
 
 ### 2.8 Check Graduation Requirements
-![Sequence Diagram – Check Grad Requirements](images/sequence_check_grad_reqs.png)
+![Sequence Diagram – Check Grad Requirements](images/Context-Level_DFD-Sequence2.8.drawio.png)
 
 ### 2.9 Submit FAFSA
-![Sequence Diagram – FAFSA](images/sequence_submit_fafsa.png)
+![Sequence Diagram – FAFSA](images/Context-Level_DFD-Sequence2.9.drawio.png)
 
 ---
 
 ## 3. Class Diagram
 
-![Class Diagram – Full System](images/class_diagram_full.png)
+![Class Diagram – Full System](images/StateChart.drawio.png)
 
 
 Note: Public = `+`, Private = `-`, Protected = `#`
