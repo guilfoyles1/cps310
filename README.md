@@ -727,7 +727,7 @@ ENDIF
 ![Sequence Diagram – Apply](images/Context-Level_DFD-Sequence2.1.drawio.png)
 
 ### 2.2 Schedule Classes
-![Sequence Diagram – Schedule](images/Context-Level_DFD-Sequence2.2.drawio.png)
+![Sequence Diagram – Schedule](Context-Level_DFD-Sequence2.2.drawio.png)
 
 ### 2.3 Withdraw from a Class
 ![Sequence Diagram – Withdraw](images/Context-Level_DFD-Sequence2.3.drawio.png)
