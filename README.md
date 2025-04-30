@@ -2,7 +2,6 @@
 
 ## Authors
 - Claire Summers
-- Mason Euler
 - Shayna Guilfoyle
 
 ## 1. Introduction
