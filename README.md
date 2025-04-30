@@ -66,10 +66,10 @@ The system will handle:
 ## 3. Systems Analysis
 
 ### a. Context-Level Data Flow Diagram
-![DFD_CPS310](ContextLevelDFD.png)
+![DFD_CPS310](images/ContextLevelDFD.png)
 
 ### b. Context-Level Entity Relationship Diagram
-![ER Diagram](ERD.png)
+![ER Diagram](images/ERD.png)
 
 
 ### c. Use Cases
@@ -234,7 +234,7 @@ The system will handle:
       - The FAFSA application is submitted and processed.  
 
 #### ii. Use Case Diagram
-![Use Case Diagram](UseCaseDiagram.png)
+![Use Case Diagram](images/UseCaseDiagram.png)
 
 ---
 
@@ -249,13 +249,13 @@ This document lays out the initial system proposal, covering its key functions, 
 
 ## 1. Data Flow Diagrams  
 ### a. Diagram 0 (System-Level Decomposition)  
-![Diagram 0](Diagram0.png)
+![Diagram 0](images/Diagram0.png)
 
 ### b. Child Diagram 1 (Process 1: Handle Student Requests)  
-![Child Diagram 1](ChildDiagram1.png)
+![Child Diagram 1](images/ChildDiagram1.png)
 
 ### c. Child Diagram 2 (Process 2: Manage Course Enrollment) 
-![Child Diagram 2](ChildDiagram2.png)
+![Child Diagram 2](images/ChildDiagram2.png)
 
 
 ## 2. Data Dictionary
@@ -757,16 +757,6 @@ ENDIF
 
 ![Class Diagram – Full System](images/class_diagram_full.png)
 
-Classes:
-- **Student**: +id, +name, +email, +major, +transcript / +registerCourse(), +withdrawCourse(), +viewTranscript()
-- **Course**: +id, +title, +capacity, +prerequisites / +enrollStudent(), +dropStudent()
-- **Enrollment**: +studentID, +courseID, +status / +updateStatus()
-- **Transcript**: +studentID, +coursesCompleted, +GPA / +generateTranscript()
-- **Application**: +id, +studentID, +status / +submit(), +review()
-- **MajorChangeRequest**: +id, +studentID, +newMajor / +submitRequest(), +approveRequest()
-- **Grade**: +studentID, +courseID, +grade / +submitGrade(), +updateGrade()
-- **Admin**: +id, +name, +role / +approveApplication(), +reviewTranscript()
-- **Faculty**: +id, +name, +department / +submitGrades(), +viewCourses()
 
 Note: Public = `+`, Private = `-`, Protected = `#`
 
