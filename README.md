@@ -754,7 +754,7 @@ ENDIF
 
 ## 3. Class Diagram
 
-![Class Diagram – Full System](images/StateChart.drawio.png)
+![Class Diagram – Full System](images/Class_Diagram.png)
 
 
 Note: Public = `+`, Private = `-`, Protected = `#`
