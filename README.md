@@ -1,4 +1,23 @@
-# CPS 310 - Phase 1: System Overview & Use Cases
+# CPS 310 Systems Analysis Project
+
+This repository contains documentation from my **Systems Analysis & Design** course (CPS 310), completed in Fall 2024 at the University of Dayton. While no code was written for this project, it demonstrates strong technical documentation, modeling, and systems design skills.
+
+## 📄 Project Overview
+
+Our team proposed a redesigned student services system for the University of Dayton to streamline processes like applications, scheduling, grade tracking, and graduation workflows.
+
+## ✍️ Deliverables
+
+- Phase 1: Use Case Analysis, System Overview, Context-Level DFD
+- Phase 2: Data Flow Diagrams (Level 0 and Child), Process Specifications, Data Dictionary
+- Phase 3: UML Diagrams (Use Case, Activity, Sequence, Class), Structured Decisions
+
+## 📌 Skills Demonstrated
+
+- Systems thinking & requirement gathering  
+- Data modeling (ERDs, DFDs, Data Dictionaries)  
+- Use case development & process specs  
+- UML diagramming and structured logic (Decision Tables, Trees, Structured English)
 
 ## Authors
 - Claire Summers
@@ -770,6 +789,14 @@ Therefore, statechart diagrams were deemed unnecessary for this system.
 
 
 ---
+
+## 🔗 Contact
+
+For questions or collaboration, feel free to connect with me:
+
+**Shayna Guilfoyle**  
+📧 shayna.guilfoyle@gmail.com
+🌐 [linkedin.com/in/shayna-guilfoyle](https://www.linkedin.com/in/shayna-guilfoyle)
 
 
 
